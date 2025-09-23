@@ -6,8 +6,9 @@ Spin up a temporary instance of EduTools if your school blocks it.
 
 ### Automatic (in Codespaces/Devcontainer)
 1. Open this repository in GitHub Codespaces or a devcontainer
-2. The script will automatically download and start EduTools
-3. Access the application on the forwarded port (usually 3000)
+2. The build will be automatically downloaded during container creation
+3. Run `./start-server.sh` to start the EduTools server
+4. Access the application on the forwarded port (usually 3000)
 
 ### Manual Usage
 
@@ -49,8 +50,27 @@ The `deploy-edutools.sh` script:
 
 ## Troubleshooting
 
-If the script fails to download artifacts, it might be due to GitHub API rate limits or authentication requirements. In that case, you can:
+### Artifact Download Issues
+If the script fails to download artifacts, it might be due to:
 
-1. Use GitHub CLI: `gh auth login`
-2. Or wait a bit and try again
-3. Or download manually from the [Actions page](https://github.com/EducationalTools/src/actions/workflows/build.yml)
+1. **GitHub API rate limits or authentication requirements**
+   - Use GitHub CLI: `gh auth login`
+   - Or wait a bit and try again
+   - Or download manually from the [Actions page](https://github.com/EducationalTools/src/actions/workflows/build.yml)
+
+2. **Network restrictions**
+   - Some environments block GitHub API access
+   - The script will create a mock instance for demonstration in this case
+
+### In Development Environments
+- The script automatically detects if running in Codespaces or devcontainers
+- Use `./start-server.sh` for easy server startup
+- Check that port 3000 is forwarded properly
+
+### Manual Download
+If automatic download fails, you can manually:
+1. Go to [EducationalTools/src Actions](https://github.com/EducationalTools/src/actions/workflows/build.yml)
+2. Click on the latest successful run
+3. Download the "Build" artifact
+4. Extract it to `./edutools-build/`
+5. Run `./deploy-edutools.sh start`
