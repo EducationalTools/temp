@@ -1,0 +1,3 @@
+{
+  "postStartCommand": "bash ./run_edutools.sh"
+}
