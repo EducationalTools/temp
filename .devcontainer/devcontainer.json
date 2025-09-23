@@ -1,0 +1,27 @@
+{
+  "name": "EduTools Temporary Instance",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  
+  "postCreateCommand": "./deploy-edutools.sh download",
+  "postStartCommand": "./deploy-edutools.sh start",
+  
+  "forwardPorts": [3000, 3001, 8000, 8080],
+  "portsAttributes": {
+    "3000": {
+      "label": "EduTools Main",
+      "onAutoForward": "notify"
+    }
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-json"
+      ]
+    }
+  }
+}
