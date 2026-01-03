@@ -20,7 +20,7 @@ print('Starting server...')
 
 time.sleep(10)
 
-input("\n\n\n\n\n\n\n\n\n\nEduTools running, press enter to open")
+input("\n\n\n\n\n\n\n\n\n\nEduTools is running! Press enter to open")
 webbrowser.open(URL)
 
 try:
