@@ -1,3 +1,3 @@
 {
-  "postAttachCommand": "python ./run_edutools.sh"
+  "postAttachCommand": "python ./run_edutools.py"
 }
