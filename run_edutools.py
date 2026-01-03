@@ -4,7 +4,9 @@ import socketserver
 import threading
 import webbrowser
 
-os.system("git clone --recurse-submodules -j 8 https://github.com/EducationalTools/EducationalTools.github.io.git edutools")
+print("Downloading EduTools")
+
+os.system("git clone -j 8 https://github.com/EducationalTools/EducationalTools.github.io.git edutools")
 
 PORT = 8000
 ROOT = "./edutools"
@@ -24,4 +26,3 @@ try:
 except KeyboardInterrupt:
     print("\nShutting down…")
     httpd.shutdown()
-    
