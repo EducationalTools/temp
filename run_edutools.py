@@ -16,7 +16,11 @@ threading.Thread(
     daemon=True
 ).start()
 
-input("Server running. Press Enter to open in browser…")
+print('Starting server...')
+
+time.sleep(10)
+
+input("\n\n\n\n\n\n\n\n\n\nEduTools running, press enter to open")
 webbrowser.open(URL)
 
 try:
